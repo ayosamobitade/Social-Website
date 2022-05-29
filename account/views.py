@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from form import LoginForm
+from .forms import LoginForm
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 
