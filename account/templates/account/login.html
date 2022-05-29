@@ -10,8 +10,11 @@
 <form method="post">
 {{ form.as_p }}
 {% csrf_token %}
-<p><input type="submit" value="Log in"></p>
+<p><input type="submit" value="Log in" class="btn btn-primary"></p>
 </form>
+
+
+
 
 {% endblock %}
 {% block footer %}{% endblock %}
