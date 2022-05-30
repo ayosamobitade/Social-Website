@@ -15,6 +15,7 @@
 {% else %}
 <p>Please, use the following form to log-in</p>
 {% endif %}
+
 <form action="{% url 'login' %}" method="post">
     {{ form.as_p }}
     {% csrf_token %}
