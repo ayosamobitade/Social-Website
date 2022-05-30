@@ -12,17 +12,60 @@
     <div class="container">
 
         {% block header %}
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Bookmarks</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                {% if request.user.is_authenticated %}
+
+                <ul class="navbar-nav">
+                  <li class="nav-item" {% if section == "dashboard" %} {% endif %}>
+                    <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">My Dashboard</a>
+                  </li>
+
+                  <li {% if section == "images" %} class="nav-item" {% endif %}>
+                    <a class="nav-link" href="#">Images</a>
+                  </li>
+
+                  <li {% if section == "people" %} class="nav-item" {% endif %} >
+                    <a class="nav-link" href="#">People</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link justify-content-end">Disabled</a>
+                  </li>
+                </ul>
+                {% endif %}
+              </div>
+            </div>
+          </nav>
+
+
+
+
+
+
         
         <div id="header">
             <span class="logo">Bookmarks</span>
             {% if request.user.is_authenticated %}
             <ul class="menu">
-            <li {% if section == "dashboard" %}class="selected"{% endif %}>
+            <li {% if section == "dashboard" %}class="selected" {% endif %}>
+
             <a href="{% url "dashboard" %}">My dashboard</a>
+
+
+
             </li>
+
+
             <li {% if section == "images" %}class="selected"{% endif %}>
             <a href="#">Images</a>
             </li>
+
+
             <li {% if section == "people" %}class="selected"{% endif %}>
             <a href="#">People</a>
             </li>
