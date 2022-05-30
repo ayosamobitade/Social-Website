@@ -1,0 +1,32 @@
+{% extends 'account/base/base.html' %}
+
+{% block header %}
+<h1>Log-in</h1>
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+<p>
+    Your username and password didn't match
+    Please, try again
+</p>
+{% else %}
+<p>Please, use the following form to log-in</p>
+{% endif %}
+<form action="{% url 'login' %}" method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <p><input type="hidden" name="next" value="{{ next }}" ></p>
+    <p><input type="submit" value="Log-in" class="btn btn-primary"> </p>
+</form>
+
+
+
+
+
+
+
+
+
+{% endblock %}
