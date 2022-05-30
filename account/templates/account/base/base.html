@@ -10,7 +10,9 @@
 </head>
 <body>
     <div class="container">
+
         {% block header %}
+        
         <div id="header">
             <span class="logo">Bookmarks</span>
             {% if request.user.is_authenticated %}
