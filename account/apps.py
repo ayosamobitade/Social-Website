@@ -6,4 +6,3 @@ class AccountConfig(AppConfig):
     name = 'account'
 
 
-ss
