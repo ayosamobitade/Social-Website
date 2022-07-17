@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import dashboard, UserRegistrationForM
+from . import views
+from .views import dashboard, UserRegistrationForM, edit
 from django.contrib.auth import views as auth_views
 
 
@@ -16,4 +17,5 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('register/', UserRegistrationForM, name='register'),
+    path('edit/', views.edit, name = 'edit'),
 ]
