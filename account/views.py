@@ -1,3 +1,4 @@
+from re import A
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 
@@ -21,3 +22,8 @@ def register(request):
             new_user.save()
             return render(request, 'account/register_done.html',
             {'new_user':new_user})
+        else:
+            user_form = UserRegistrationForM()
+        return(request, 'account/register.html', {'user_form':user_form})
+
+        
