@@ -39,6 +39,7 @@
                 </ul>
                 {% endif %}
                 
+                
               </div>
             </div>
           </nav>
@@ -80,10 +81,27 @@
             <a href="{% url 'login' %}">Log-in</a>
             {% endif %}
             </span>
+
+            {% if messages %}
+            <ul class="messages">
+              {% for message in messages %}
+              <li class="{{ message.tags }}">
+                {{ message|safe }}
+                <a href="#" class="close">x</a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
             </div>
-        {% endblock %}
+
+            {% endblock %}ddf
+
+
+            
+       
   
         {% block content %}{% endblock %}
+
         {% block footer %}{% endblock %}
       </div>
     
