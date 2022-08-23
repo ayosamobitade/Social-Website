@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 django = "*"
 social-auth-app-django = "*"
+django-extensions = "*"
+werkzeug = "*"
+pyopenssl = "==19.0.0"
 
 [dev-packages]
 
