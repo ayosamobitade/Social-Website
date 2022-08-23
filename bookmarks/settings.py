@@ -72,9 +72,12 @@ TEMPLATES = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = [
+AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
-]
+)
+
+SOCIAL_AUTH_FACEBOOK_KEY = '464508305534878' # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '7619a13a38044e07607e561fae1e29b0' # Facebook App Secret
 
 WSGI_APPLICATION = 'bookmarks.wsgi.application'
 
