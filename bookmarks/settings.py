@@ -72,6 +72,10 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'social_core.backends.facebook.FacebookOAuth2',
+]
+
 WSGI_APPLICATION = 'bookmarks.wsgi.application'
 
 
