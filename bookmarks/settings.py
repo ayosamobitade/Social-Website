@@ -74,6 +74,7 @@ TEMPLATES = [
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
 )
 
 SOCIAL_AUTH_FACEBOOK_KEY = '464508305534878' # Facebook App ID
