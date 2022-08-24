@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-from django import settings
+from django.conf import settings
 
 class Image(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name = 'images_created', on_delete = models.CASCADE)
@@ -14,4 +14,4 @@ class Image(models.Model):
 
     def __str__(self):
         return self.title 
-        
+
